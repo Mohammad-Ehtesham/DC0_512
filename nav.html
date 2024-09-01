@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar with Multiple Dropdowns</title>
+    <style>
+      /* Basic Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+
+      .navlist {
+        display: flex;
+        justify-content: space-around;
+        background-color: #333;
+        padding: 10px 0;
+        list-style: none;
+      }
+
+      .navitem {
+        position: relative;
+      }
+
+      .navitem a {
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 20px;
+        display: block;
+        font-size: 16px;
+      }
+
+      .navitem a:hover {
+        background-color: #575757;
+      }
+
+      .extension {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #333;
+        min-width: 200px;
+        z-index: 1000;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .extension ul {
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+      }
+
+      .extension li {
+        position: relative; /* Ensure submenus position correctly */
+        border-bottom: 1px solid #444;
+        padding: 10px 20px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .extension li:last-child {
+        border-bottom: none;
+      }
+
+      .extension li:hover {
+        background-color: #575757;
+      }
+
+      .navitem:hover .extension {
+        display: block;
+      }
+
+      /* Second-level Dropdown */
+      .foodExten {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background-color: #333;
+        min-width: 200px;
+        z-index: 1001;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Show foodExten when hovering over Food list item */
+      .Food:hover .foodExten {
+        display: block;
+      }
+
+      .foodExten ul {
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+      }
+
+      .foodExten li {
+        border-bottom: 1px solid #444;
+        padding: 10px 20px;
+        color: #fff;
+      }
+
+      .foodExten li:last-child {
+        border-bottom: none;
+      }
+
+      .foodExten li:hover {
+        background-color: #575757;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navlist">
+      <div class="navitem">
+        <a href="##">Pet Care</a>
+        <div class="extension">
+          <ul>
+            <li class="Food">
+              Food
+              <!-- Second-level dropdown (foodExten) -->
+              <div class="foodExten">
+                <ul>
+                  <li>Dry Food</li>
+                  <li>Wet Food</li>
+                  <li>Puppy Food</li>
+                  <li>Kitten Food</li>
+                  <li>Fish Food</li>
+                  <li>Grain Free Food</li>
+                  <li>Baked Dry Food</li>
+                  <li>Veg Dog Food</li>
+                  <li>Premium Dog Food</li>
+                  <li>Prescription Diet</li>
+                </ul>
+              </div>
+            </li>
+            <li>Pharmacy</li>
+            <li>Toys</li>
+            <li>Grooming</li>
+            <li>Walk Essentials</li>
+            <li>Bedding</li>
+            <li>Bowl and Feeders</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Other nav items... -->
+    </div>
+  </body>
+</html>
